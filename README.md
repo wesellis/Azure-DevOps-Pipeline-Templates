@@ -1,3 +1,4 @@
+
 # Azure DevOps Pipeline Templates
 
 This repository contains a collection of YAML templates for Azure DevOps pipelines to streamline CI/CD processes.
@@ -20,18 +21,18 @@ The Azure DevOps Pipeline Templates project aims to provide reusable YAML templa
 
 To get started, clone the repository.
 
-\`ash
+```bash
 git clone https://github.com/wesellis/Azure-DevOps-Pipeline-Templates.git
 cd Azure-DevOps-Pipeline-Templates
-\`
+```
 
 ## Usage
 
 ### Sample Pipeline: Build and Deploy .NET Application
 
-To use the build and deploy .NET application pipeline, include the dotnet-build-deploy.yml template in your Azure DevOps pipeline.
+To use the build and deploy .NET application pipeline, include the `dotnet-build-deploy.yml` template in your Azure DevOps pipeline.
 
-\`yaml
+```yaml
 # azure-pipelines.yml
 trigger:
 - main
@@ -44,7 +45,7 @@ extends:
     azureSubscription: 'AzureServiceConnection'
     appServiceName: 'YourAppServiceName'
     resourceGroupName: 'YourResourceGroupName'
-\`
+```
 
 ### Other Templates
 
