@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure DevOps Pipeline Templates</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        header {
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        
+        h1 { color: #58a6ff; font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { color: #7d8590; font-size: 1.1rem; margin-bottom: 20px; }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .tech {
+            background: #21262d;
+            border: 1px solid #30363d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #58a6ff;
+        }
+        
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .template-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .template-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+        
+        .template-card h3 {
+            color: #f0f6fc;
+            margin-bottom: 10px;
+        }
+        
+        .code-snippet {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .status.ready { background: #238636; color: #ffffff; }
+        .link { color: #58a6ff; text-decoration: none; }
+        .link:hover { text-decoration: underline; }
+        
+        footer {
+            text-align: center;
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            margin-top: 40px;
+            color: #7d8590;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Azure DevOps Pipeline Templates</h1>
+            <p class="subtitle">Enterprise-ready YAML pipeline templates for accelerated CI/CD implementation</p>
+            <div class="tech-stack">
+                <span class="tech">.NET</span>
+                <span class="tech">Node.js</span>
+                <span class="tech">Python</span>
+                <span class="tech">Docker</span>
+                <span class="tech">Kubernetes</span>
+                <span class="tech">Terraform</span>
+                <span class="tech">ARM Templates</span>
+            </div>
+        </header>
+
+        <div class="code-snippet">
+# Quick Start Example<br>
+trigger:<br>
+- main<br><br>
+
+resources:<br>
+  repositories:<br>
+  - repository: templates<br>
+    type: github<br>
+    name: wesellis/Azure-DevOps-Pipeline-Templates<br><br>
+
+extends:<br>
+  template: templates/dotnet-build-deploy.yml@templates<br>
+  parameters:<br>
+    azureSubscription: 'YourConnection'<br>
+    appServiceName: 'your-app-name'
+        </div>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <h3>.NET Build & Deploy</h3>
+                <p>Complete .NET application CI/CD pipeline with testing, code coverage, and Azure App Service deployment.</p>
+                <span class="status ready">READY</span>
+            </div>
+
+            <div class="template-card">
+                <h3>Docker Build & Push</h3>
+                <p>Multi-architecture Docker image builds with vulnerability scanning and registry push.</p>
+                <span class="status ready">READY</span>
+            </div>
+
+            <div class="template-card">
+                <h3>Kubernetes Deploy</h3>
+                <p>Production-ready Kubernetes deployments with health checks and rollback strategies.</p>
+                <span class="status ready">READY</span>
+            </div>
+
+            <div class="template-card">
+                <h3>Terraform Infrastructure</h3>
+                <p>Infrastructure as Code with Terraform state management and approval workflows.</p>
+                <span class="status ready">READY</span>
+            </div>
+
+            <div class="template-card">
+                <h3>Node.js Build & Deploy</h3>
+                <p>Node.js applications with npm/yarn/pnpm support, testing, and Azure deployment.</p>
+                <span class="status ready">READY</span>
+            </div>
+
+            <div class="template-card">
+                <h3>Python Build & Deploy</h3>
+                <p>Python applications with pip/pipenv/poetry support, linting, and cloud deployment.</p>
+                <span class="status ready">READY</span>
+            </div>
+
+            <div class="template-card">
+                <h3>ARM Template Deploy</h3>
+                <p>Azure Resource Manager template deployments with validation and post-deployment testing.</p>
+                <span class="status ready">READY</span>
+            </div>
+        </div>
+
+        <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 25px; margin: 30px 0;">
+            <h2 style="color: #f0f6fc; margin-bottom: 20px;">Key Features</h2>
+            <ul style="list-style: none; color: #7d8590;">
+                <li style="margin: 10px 0;">✓ Multi-stage pipelines with proper separation</li>
+                <li style="margin: 10px 0;">✓ Parameterized templates for maximum reusability</li>
+                <li style="margin: 10px 0;">✓ Built-in security scanning and quality checks</li>
+                <li style="margin: 10px 0;">✓ Comprehensive error handling and logging</li>
+                <li style="margin: 10px 0;">✓ Production-ready deployment strategies</li>
+                <li style="margin: 10px 0;">✓ Environment-specific configurations</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Azure DevOps Pipeline Templates | Professional CI/CD Acceleration</p>
+            <p>Author: Wesley Ellis | <a href="mailto:wes@wesellis.com" class="link">wes@wesellis.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
