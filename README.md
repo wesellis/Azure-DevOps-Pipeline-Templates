@@ -1,4 +1,4 @@
-# Azure DevOps Pipeline Templates 🚀
+# Azure DevOps Pipeline Templates
 
 Enterprise-grade collection of reusable YAML pipeline templates for Azure DevOps, designed to accelerate CI/CD implementation across multiple technologies and deployment scenarios.
 
@@ -6,30 +6,30 @@ Enterprise-grade collection of reusable YAML pipeline templates for Azure DevOps
 [![Templates](https://img.shields.io/badge/Templates-7-blue.svg)](#available-templates)
 [![Technologies](https://img.shields.io/badge/Technologies-7-green.svg)](#key-features)
 
-## 🎯 **Why Use These Templates?**
+## Why Use These Templates?
 
 Transform your Azure DevOps pipelines from hours of configuration to minutes of implementation:
 
-- **⚡ 90% faster** pipeline setup time
-- **🔒 Security-first** with built-in vulnerability scanning
-- **📊 Production-ready** with comprehensive monitoring and rollback
-- **🎨 Highly customizable** for any project requirements
-- **✅ Battle-tested** in enterprise environments
+- **90% faster** pipeline setup time
+- **Security-first** with built-in vulnerability scanning
+- **Production-ready** with comprehensive monitoring and rollback
+- **Highly customizable** for any project requirements
+- **Battle-tested** in enterprise environments
 
-## 📋 **Table of Contents**
+## Table of Contents
 
-- [Quick Start](#-quick-start)
-- [Available Templates](#-available-templates)
-- [Real-World Examples](#-real-world-examples)
-- [Template Parameters](#-template-parameters)
-- [Advanced Features](#-advanced-features)
-- [Best Practices](#-best-practices)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
+- [Quick Start](#quick-start)
+- [Available Templates](#available-templates)
+- [Real-World Examples](#real-world-examples)
+- [Template Parameters](#template-parameters)
+- [Advanced Features](#advanced-features)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
 
-## 🚀 **Quick Start**
+## Quick Start
 
-### **Option 1: Single Template Usage**
+### Option 1: Single Template Usage
 
 ```yaml
 # azure-pipelines.yml
@@ -52,7 +52,7 @@ extends:
     resourceGroupName: 'your-resource-group'
 ```
 
-### **Option 2: Multi-Template Pipeline**
+### Option 2: Multi-Template Pipeline
 
 ```yaml
 # Enterprise pipeline with multiple technologies
@@ -90,62 +90,21 @@ stages:
     imageTag: '$(Build.BuildNumber)'
 ```
 
-## 📦 **Available Templates**
+## Available Templates
 
-<table>
-<tr>
-<th>Template</th>
-<th>Technology</th>
-<th>Features</th>
-<th>Status</th>
-</tr>
-<tr>
-<td><strong>dotnet-build-deploy.yml</strong></td>
-<td>.NET Core/Framework</td>
-<td>✅ Multi-targeting<br>✅ Test coverage<br>✅ App Service deploy</td>
-<td>🟢 Production Ready</td>
-</tr>
-<tr>
-<td><strong>node-build-deploy.yml</strong></td>
-<td>Node.js</td>
-<td>✅ npm/yarn/pnpm<br>✅ Linting & tests<br>✅ Azure deployment</td>
-<td>🟢 Production Ready</td>
-</tr>
-<tr>
-<td><strong>python-build-deploy.yml</strong></td>
-<td>Python</td>
-<td>✅ pip/pipenv/poetry<br>✅ Code coverage<br>✅ Azure Functions</td>
-<td>🟢 Production Ready</td>
-</tr>
-<tr>
-<td><strong>docker-build-push.yml</strong></td>
-<td>Docker</td>
-<td>✅ Multi-arch builds<br>✅ Vulnerability scan<br>✅ Multi-registry</td>
-<td>🟢 Production Ready</td>
-</tr>
-<tr>
-<td><strong>k8s-deploy.yml</strong></td>
-<td>Kubernetes</td>
-<td>✅ Blue/green deploy<br>✅ Health checks<br>✅ Rollback strategy</td>
-<td>🟢 Production Ready</td>
-</tr>
-<tr>
-<td><strong>terraform-init-apply.yml</strong></td>
-<td>Terraform</td>
-<td>✅ State management<br>✅ Plan validation<br>✅ Approval gates</td>
-<td>🟢 Production Ready</td>
-</tr>
-<tr>
-<td><strong>arm-deploy.yml</strong></td>
-<td>ARM Templates</td>
-<td>✅ Template validation<br>✅ What-if analysis<br>✅ Resource verification</td>
-<td>🟢 Production Ready</td>
-</tr>
-</table>
+| Template | Technology | Features | Status |
+|----------|------------|----------|---------|
+| **dotnet-build-deploy.yml** | .NET Core/Framework | Multi-targeting, Test coverage, App Service deploy | Production Ready |
+| **node-build-deploy.yml** | Node.js | npm/yarn/pnpm, Linting & tests, Azure deployment | Production Ready |
+| **python-build-deploy.yml** | Python | pip/pipenv/poetry, Code coverage, Azure Functions | Production Ready |
+| **docker-build-push.yml** | Docker | Multi-arch builds, Vulnerability scan, Multi-registry | Production Ready |
+| **k8s-deploy.yml** | Kubernetes | Blue/green deploy, Health checks, Rollback strategy | Production Ready |
+| **terraform-init-apply.yml** | Terraform | State management, Plan validation, Approval gates | Production Ready |
+| **arm-deploy.yml** | ARM Templates | Template validation, What-if analysis, Resource verification | Production Ready |
 
-## 🏢 **Real-World Examples**
+## Real-World Examples
 
-### **Enterprise .NET Application**
+### Enterprise .NET Application
 
 ```yaml
 # Full-featured .NET deployment with all bells and whistles
@@ -167,7 +126,7 @@ extends:
       value: '$(DatabaseConnectionString)'
 ```
 
-### **Microservices Docker Deployment**
+### Microservices Docker Deployment
 
 ```yaml
 # Multi-service Docker build with advanced features
@@ -190,7 +149,7 @@ extends:
     scanImage: true
 ```
 
-### **Production Kubernetes Deployment**
+### Production Kubernetes Deployment
 
 ```yaml
 # Enterprise Kubernetes deployment with full observability
@@ -214,7 +173,7 @@ extends:
     runSmokeTests: true
 ```
 
-### **Infrastructure as Code with Terraform**
+### Infrastructure as Code with Terraform
 
 ```yaml
 # Complete infrastructure deployment pipeline
@@ -234,23 +193,22 @@ extends:
     additionalArgs: '-var-file="../common.tfvars" -var-file="production.tfvars"'
 ```
 
-## ⚙️ **Template Parameters**
+## Template Parameters
 
-### **Universal Parameters**
+### Universal Parameters
 Parameters supported across all templates:
 
 | Parameter | Type | Default | Description | Required |
 |-----------|------|---------|-------------|----------|
-| `azureSubscription` | string | - | Azure service connection name | ✅ |
-| `resourceGroupName` | string | - | Target Azure resource group | ✅ |
-| `buildConfiguration` | string | 'Release' | Build configuration | ❌ |
-| `runTests` | boolean | true | Execute unit tests | ❌ |
-| `environmentVariables` | object | [] | Runtime environment variables | ❌ |
+| `azureSubscription` | string | - | Azure service connection name | Yes |
+| `resourceGroupName` | string | - | Target Azure resource group | Yes |
+| `buildConfiguration` | string | 'Release' | Build configuration | No |
+| `runTests` | boolean | true | Execute unit tests | No |
+| `environmentVariables` | object | [] | Runtime environment variables | No |
 
-### **Technology-Specific Parameters**
+### Technology-Specific Parameters
 
-<details>
-<summary><strong>📘 .NET Template Parameters</strong></summary>
+#### .NET Template Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -259,10 +217,7 @@ Parameters supported across all templates:
 | `publishProfile` | string | '' | Publish profile name |
 | `appServiceName` | string | - | Azure App Service name |
 
-</details>
-
-<details>
-<summary><strong>🐳 Docker Template Parameters</strong></summary>
+#### Docker Template Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -272,10 +227,7 @@ Parameters supported across all templates:
 | `buildArgs` | array | [] | Docker build arguments |
 | `scanImage` | boolean | true | Enable vulnerability scanning |
 
-</details>
-
-<details>
-<summary><strong>☸️ Kubernetes Template Parameters</strong></summary>
+#### Kubernetes Template Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -285,11 +237,9 @@ Parameters supported across all templates:
 | `replicas` | number | 3 | Pod replica count |
 | `healthCheckPath` | string | '/health' | Health check endpoint |
 
-</details>
+## Advanced Features
 
-## 🎨 **Advanced Features**
-
-### **Conditional Deployment Strategies**
+### Conditional Deployment Strategies
 
 ```yaml
 # Environment-based deployment logic
@@ -320,7 +270,7 @@ extends:
       replicas: 1
 ```
 
-### **Multi-Environment Deployment Matrix**
+### Multi-Environment Deployment Matrix
 
 ```yaml
 # Deploy to multiple environments in parallel
@@ -348,38 +298,37 @@ extends:
     resourceGroupName: 'myapp-$(environmentName)-rg'
 ```
 
-## 💡 **Best Practices**
+## Best Practices
 
-### **🔒 Security Best Practices**
+### Security Best Practices
 - **Use Azure Key Vault** for all secrets and connection strings
 - **Enable vulnerability scanning** in all Docker builds
 - **Implement least-privilege access** for service connections
 - **Use managed identities** where possible instead of service principals
 
-### **⚡ Performance Optimization**
+### Performance Optimization
 - **Enable pipeline caching** for dependencies (NuGet, npm, pip)
 - **Use parallel jobs** for independent build tasks
 - **Optimize Docker builds** with multi-stage builds and .dockerignore
 - **Implement incremental builds** for large codebases
 
-### **📊 Monitoring & Observability**
+### Monitoring & Observability
 - **Add Application Insights** integration to deployment templates
 - **Include health checks** in all service deployments
 - **Set up alerting** for deployment failures
 - **Track deployment metrics** with custom telemetry
 
-### **🔄 DevOps Best Practices**
+### DevOps Best Practices
 - **Pin template versions** using Git tags for production pipelines
 - **Use feature flags** for gradual rollouts
 - **Implement blue-green deployments** for zero-downtime updates
 - **Automate rollback procedures** for failed deployments
 
-## 🔧 **Troubleshooting Guide**
+## Troubleshooting Guide
 
-### **Common Issues & Solutions**
+### Common Issues & Solutions
 
-<details>
-<summary><strong>❌ Template Not Found Error</strong></summary>
+#### Template Not Found Error
 
 **Problem**: Pipeline fails with "Template not found" error
 
@@ -394,53 +343,45 @@ resources:
     ref: main  # Use specific tag in production: ref: 'v1.0.0'
 ```
 
-</details>
-
-<details>
-<summary><strong>❌ Parameter Validation Errors</strong></summary>
+#### Parameter Validation Errors
 
 **Problem**: Parameter type mismatch or missing required parameters
 
 **Solutions**:
-- ✅ Check parameter types match template expectations
-- ✅ Verify all required parameters are provided
-- ✅ Use proper YAML syntax for arrays and objects
-- ✅ Quote string values containing special characters
+- Check parameter types match template expectations
+- Verify all required parameters are provided
+- Use proper YAML syntax for arrays and objects
+- Quote string values containing special characters
 
-</details>
-
-<details>
-<summary><strong>❌ Service Connection Issues</strong></summary>
+#### Service Connection Issues
 
 **Problem**: Authentication failures or permission denied errors
 
 **Solutions**:
-- ✅ Verify service connection exists in Azure DevOps
-- ✅ Check service principal hasn't expired
-- ✅ Ensure proper RBAC roles in Azure subscription
-- ✅ Test service connection manually in Azure DevOps
+- Verify service connection exists in Azure DevOps
+- Check service principal hasn't expired
+- Ensure proper RBAC roles in Azure subscription
+- Test service connection manually in Azure DevOps
 
-</details>
+### Getting Help
 
-### **Getting Help**
+1. **Documentation**: Check template-specific README files
+2. **Issues**: Report bugs via GitHub Issues
+3. **Discussions**: Ask questions in GitHub Discussions
+4. **Direct Support**: Email wes@wesellis.com for urgent issues
 
-1. **📚 Documentation**: Check template-specific README files
-2. **🐛 Issues**: Report bugs via GitHub Issues
-3. **💬 Discussions**: Ask questions in GitHub Discussions
-4. **📧 Direct Support**: Email wes@wesellis.com for urgent issues
-
-## 🤝 **Contributing**
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
-### **🎯 Ways to Contribute**
+### Ways to Contribute
 - **Add new templates** for other technologies
 - **Improve existing templates** with new features
 - **Fix bugs** and enhance error handling
 - **Update documentation** and examples
 - **Share usage patterns** and best practices
 
-### **🛠️ Development Process**
+### Development Process
 
 ```bash
 # 1. Fork and clone the repository
@@ -456,31 +397,27 @@ git checkout -b feature/awesome-new-template
 
 See our [Contributing Guidelines](CONTRIBUTING.md) for detailed information.
 
-## 📄 **License**
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 **Support**
+## Support
 
-### **Professional Support**
-- **📧 Email**: wes@wesellis.com
-- **🌐 Website**: [wesellis.com](https://wesellis.com)
-- **💼 LinkedIn**: Professional consultation available
+### Professional Support
+- **Email**: wes@wesellis.com
+- **Website**: [wesellis.com](https://wesellis.com)
+- **LinkedIn**: Professional consultation available
 
-### **Community Support**
-- **🐛 GitHub Issues**: Bug reports and feature requests
-- **💬 GitHub Discussions**: Questions and community help
-- **📖 Documentation**: Comprehensive guides and examples
+### Community Support
+- **GitHub Issues**: Bug reports and feature requests
+- **GitHub Discussions**: Questions and community help
+- **Documentation**: Comprehensive guides and examples
 
 ---
 
-<div align="center">
-
-**🚀 Azure DevOps Pipeline Templates**
+**Azure DevOps Pipeline Templates**
 
 *Making enterprise CI/CD implementation faster, more secure, and more reliable*
 
-[![⭐ Star this repo](https://img.shields.io/github/stars/wesellis/Azure-DevOps-Pipeline-Templates?style=social)](https://github.com/wesellis/Azure-DevOps-Pipeline-Templates)
-[![🍴 Fork this repo](https://img.shields.io/github/forks/wesellis/Azure-DevOps-Pipeline-Templates?style=social)](https://github.com/wesellis/Azure-DevOps-Pipeline-Templates/fork)
-
-</div>
+[![Star this repo](https://img.shields.io/github/stars/wesellis/Azure-DevOps-Pipeline-Templates?style=social)](https://github.com/wesellis/Azure-DevOps-Pipeline-Templates)
+[![Fork this repo](https://img.shields.io/github/forks/wesellis/Azure-DevOps-Pipeline-Templates?style=social)](https://github.com/wesellis/Azure-DevOps-Pipeline-Templates/fork)
